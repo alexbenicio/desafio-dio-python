@@ -17,5 +17,65 @@ REGRAS
 
 '''
 
+# Controles
+VL_LIMITE_SAQUE = 500
+QT_LIMITE_SAQUE = 3
+SALDO_INICIAL = 0
+
+# Variaveis
+Saldo = 0
+VlNumerario = 0
+ContaCorrente = 0
+Agencia = 1
+numeroSaques = 0
+
+# Métodos 
+
+def saque():
+    print("Iniciando operação de saque.")
+
+def deposito():
+    print("Iniciando operação de depósito")
+
+def extrato():
+    print("Aguarde a impressão do Extrato")
+
+def menu():
+    print("""
+    *****************************
+    *****************************
+    Bem vindo ao Banco Digital AB
+    -----------------------------
+    Por favor, selecione a opção
+    desejada:
+    [S] - SAQUE
+    [D] - DEPÓSITO
+    [E] - EXTRATO
+    [Q] - ENCERRAR A SESSÃO
+    *****************************
+    *****************************
+
+    """)
+
+def main():
+    while True:
+        menu()
+        opcao = input("Digite a opção desejada: ")
+        opcao = opcao.upper()
+
+        if opcao == 'S':
+            saque()
+        elif opcao == 'D':
+            deposito()
+        elif opcao == 'E':
+            extrato()
+        elif opcao == 'Q':
+            print("Sessão encerrada.")
+            break
+        else:
+            print("Opção inválida. Tente novamente.")
 
 
+# Inicio da aplicacao
+if __name__ == "__main__":
+    main()
